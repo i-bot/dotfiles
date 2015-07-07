@@ -1,0 +1,26 @@
+# ~/.gitconfig
+
+[user]
+    email = i-bot@openmailbox.org
+    name  = i-bot
+
+[push]
+    default = current
+
+[alias]
+    graph = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    commit-count = rev-list HEAD --count
+
+    c  	= commit -v
+    ca 	= commit --amend
+    a  	= add
+    r  	= remove
+    b  	= branch
+    co 	= checkout
+    cb 	= checkout -b
+    g  	= log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    s  	= status -bs
+    d  	= diff
+    psh	= push origin
+    pll = pull origin
+    r 	= rebase -i

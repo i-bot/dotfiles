@@ -1,0 +1,56 @@
+! ~/.Xdefaults
+
+Xmessage.background:          #002b36
+Xmessage.foreground:          #839496
+
+URxvt.font:	xft:Tewi:size=7
+URxvt*iso14755: false
+
+urxvt*foreground: #839496
+
+! black
+URxvt*color0  : #2E3436
+URxvt*color8  : #2E3436
+! red
+URxvt*color1  : #CC0000
+URxvt*color9  : #EF2929
+! green
+URxvt*color2  : #4E9A06
+URxvt*color10 : #FFFF00
+! yellow
+URxvt*color3  : #C4A000
+URxvt*color11 : #FCE94F
+! blue
+URxvt*color4  : #3465A4
+URxvt*color12 : #729FCF
+! magenta
+URxvt*color5  : #75507B
+URxvt*color13 : #AD7FA8
+! cyan
+URxvt*color6  : #06989A
+URxvt*color14 : #34E2E2
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
+
+URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt*background: rgba:0000/0000/0000/5555
+
+! Make numpad keys behave the same as the corresponding normal keys
+URxvt.keysym.KP_Add:		+
+URxvt.keysym.KP_Subtract:	-
+URxvt.keysym.KP_Multiply:	*
+URxvt.keysym.KP_Divide  :	/
+URxvt.keysym.KP_Decimal :	.
+URxvt.keysym.KP_Separator :	,
+URxvt.keysym.KP_1:     		1
+URxvt.keysym.KP_2:     		2
+URxvt.keysym.KP_3:     		3
+URxvt.keysym.KP_4:      	4
+URxvt.keysym.KP_5:      	5
+URxvt.keysym.KP_6:      	6
+URxvt.keysym.KP_7:      	7
+URxvt.keysym.KP_8:      	8
+URxvt.keysym.KP_9:      	9
+URxvt.keysym.KP_0:      	0
