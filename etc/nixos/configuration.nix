@@ -3,7 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./machines/hardware-configuration.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -12,19 +12,6 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.splashImage = null;
-
-  fileSystems = [
-    # Mount the home partition
-    { mountPoint = "/home";
-      device = "/dev/sda3";
-    }
-  ];
-
-  swapDevices = [
-    # Mount the swap partition
-    { device = "/dev/sda1"; }
-  ];
-
 
   # Select internationalisation properties.
   i18n = {
@@ -86,9 +73,6 @@
   services.xserver.displayManager.slim.extraConfig = ''
     session_y 200%
   '';
-
-  services.virtualboxGuest.enable = true;
-  boot.initrd.checkJournalingFS = false;
 
   users.extraGroups.i-bot = {};
 
