@@ -9,6 +9,8 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
+  networking.hostName = "virtualbox";
+
   fileSystems = [
     { mountPoint = "/";
       device = "/dev/disk/by-uuid/7c46cf96-37e6-48b2-84e5-00dc9fe38337";
@@ -25,7 +27,7 @@
   ];
 
 
-  nix.maxJobs = 1;
+  nix.maxJobs = 4;
   services.virtualboxGuest.enable = true;
   boot.initrd.checkJournalingFS = false;
 }
