@@ -25,6 +25,7 @@
     rxvt_unicode
     python2
     python3
+    openjdk
     stow
 	
     xcompmgr
@@ -38,6 +39,7 @@
     weechat
 
     haskellPackages.ghc
+    haskellPackages.ghcMod
     haskellPackages.cabal2nix
     haskellPackages.hlint
     haskellPackages.hoogle
