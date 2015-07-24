@@ -32,7 +32,7 @@
     xcompmgr
     feh
 
-    dmenu
+    dmenu2
     haskellPackages.xmobar
     haskellPackages.xmonad
     haskellPackages.xmonadContrib

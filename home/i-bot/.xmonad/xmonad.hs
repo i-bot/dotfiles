@@ -18,6 +18,13 @@ writeTagInfo handle = dynamicLogWithPP xmobarPP
 myModMask = mod4Mask
 myTerminal = "urxvtc"
 
+
+dmenuArguments :: String
+dmenuArguments = unwords $ [ "-dim 0.5"
+                           , "-z" -- fuzzy
+                           , "-l 20"
+                           ]
+
 main = do
     leftXmobar <- spawnPipe "xmobar -x 0"
     rightXmobar <- spawnPipe "xmobar -x 1"
@@ -34,7 +41,7 @@ main = do
         } `additionalKeys`
         [ ((myModMask, xK_a), spawnHere "atom ~/workspace")
         , ((myModMask, xK_t), spawnHere myTerminal)
-        , ((myModMask, xK_p), spawnHere "dmenu_run")
+        , ((myModMask, xK_p), spawnHere $ "dmenu_run " ++ dmenuArguments)
         , ((myModMask, xK_c), kill)
         , ((myModMask, xK_f), spawnHere "firefox")
         ]
