@@ -27,6 +27,7 @@
     python3
     openjdk
     stow
+    mysql
 	
     xcompmgr
     feh
@@ -75,6 +76,9 @@
   services.xserver.displayManager.slim.extraConfig = ''
     session_y 200%
   '';
+
+  services.mysql.enable = true;
+  services.mysql.package = pkgs.mysql;
 
   users.extraGroups.i-bot = {};
 
