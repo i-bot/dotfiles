@@ -1,0 +1,8 @@
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-r': 'script:run'
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-i': 'autoflow:reflow-selection'
+'atom-text-editor':
+  'ctrl-l': 'latex:build'
+'.platform-linux, .platform-linux .command-palette atom-text-editor':
+  'ctrl-o': 'command-palette:toggle'

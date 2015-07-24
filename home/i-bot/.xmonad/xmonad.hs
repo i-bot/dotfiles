@@ -32,11 +32,9 @@ main = do
             writeTagInfo leftXmobar
             writeTagInfo rightXmobar
         } `additionalKeys`
-	[ ((myModMask, xK_e), spawnHere "eclipse")
-	, ((myModMask, xK_n), spawnHere "nautilus --no-desktop")
-	, ((myModMask, xK_t), spawnHere myTerminal)
-	, ((myModMask, xK_p), spawnHere "dmenu_run")
+        [ ((myModMask, xK_a), spawnHere "atom ~/workspace")
+        , ((myModMask, xK_t), spawnHere myTerminal)
+        , ((myModMask, xK_p), spawnHere "dmenu_run")
         , ((myModMask, xK_c), kill)
-	, ((myModMask, xK_f), spawnHere "firefox")
-	, ((myModMask, xK_a), spawnHere "androidstudio")
-	]
+        , ((myModMask, xK_f), spawnHere "firefox")
+        ]
