@@ -31,6 +31,7 @@
 	
     xcompmgr
     feh
+    redshift
 
     dmenu2
     haskellPackages.xmobar
@@ -79,6 +80,10 @@
 
   services.mysql.enable = true;
   services.mysql.package = pkgs.mysql;
+
+  services.redshift.enable = true;
+  services.redshift.latitude = "48.267852";
+  services.redshift.longitude = "10.987011";
 
   users.extraGroups.i-bot = {};
 
