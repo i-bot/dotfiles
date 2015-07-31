@@ -10,6 +10,7 @@
       "monokai"
     ]
     audioBeep: false
+    destroyEmptyPanes: false
     ignoredNames: [
       ".git"
       ".gitmodules"
@@ -52,5 +53,3 @@
   "git-plus": {}
   "tree-view":
     hideIgnoredNames: true
-  latex:
-    alwaysOpenResultInAtom: true
