@@ -1,8 +1,21 @@
-'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+'.platform-linux atom-text-editor, .platform-linux .script atom-text-editor':
   'ctrl-r': 'script:run'
-'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
-  'ctrl-i': 'autoflow:reflow-selection'
-'atom-text-editor':
+'.platform-linux atom-text-editor, .platform-linux .latex atom-text-editor':
   'ctrl-l': 'latex:build'
-'.platform-linux, .platform-linux .command-palette atom-text-editor':
+
+'.platform-linux atom-text-editor, .platform-linux .command-palette atom-text-editor':
   'ctrl-o': 'command-palette:toggle'
+'.platform-linux atom-text-editor, .platform-linux .toggle-file-finder atom-text-editor':
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
+
+'.platform-linux atom-text-editor, .platform-linux .autoflow atom-text-editor':
+  'ctrl-i': 'autoflow:reflow-selection'
+
+'.platform-linux atom-text-editor, .platform-linux .pane-move .down atom-text-editor':
+  'ctrl-alt-down': 'pane-move:down'
+'.platform-linux atom-text-editor, .platform-linux .pane-move .up atom-text-editor':
+  'ctrl-alt-up': 'pane-move:up'
+'.platform-linux atom-text-editor, .platform-linux .pane-move .left atom-text-editor':
+  'ctrl-alt-left': 'pane-move:left'
+'.platform-linux atom-text-editor, .platform-linux .pane-move .right atom-text-editor':
+  'ctrl-alt-right': 'pane-move:right'
