@@ -21,7 +21,6 @@ myTerminal = "urxvtc"
 
 dmenuArguments :: String
 dmenuArguments = unwords $ [ "-dim 0.5"
-                           , "-z" -- fuzzy
                            , "-l 20"
                            ]
 
