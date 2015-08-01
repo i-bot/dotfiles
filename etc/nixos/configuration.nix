@@ -19,37 +19,42 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # Programs for daily use.
     wget
     htop
-    git
-    rxvt_unicode
+    mysql
     python2
     python3
     openjdk
-    stow
-    mysql
+    firefox
+    weechat
+    rxvt_unicode
 	
-    xcompmgr
+    # Tools required for file management.
+    git
+    stow
+    
+    # Tools for improving visual experience.
     feh
+    xcompmgr
     redshift
 
+    # Management of gtk-themes
+    lxappearance
+    
+    # Packages required for xmonad.
     dmenu2
     haskellPackages.xmobar
     haskellPackages.xmonad
     haskellPackages.xmonadContrib
     haskellPackages.xmonadExtras
-    weechat
-
+    
+    # Packages needed for haskell programming
     haskellPackages.ghc
     haskellPackages.ghcMod
     haskellPackages.cabal2nix
     haskellPackages.hlint
     haskellPackages.hoogle
-
-    firefox
-    gtk-engine-murrine
-    lxappearance
-    xlibs.xmessage
   ];
   
   programs.bash.enableCompletion = true;
@@ -58,19 +63,19 @@
   services.xserver.layout = "de";
   services.xserver.xkbVariant = "neo";
 
+  services.xserver.windowManager.default = "xmonad";
   services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.xmonad.enableContribAndExtras = true;
-
-  services.xserver.windowManager.default = "xmonad";
+  
   services.xserver.desktopManager.xterm.enable = false;
 
   services.xserver.displayManager.slim.theme = /etc/slim/nixos;
 
   services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.rxvt_unicode}/bin/urxvtd -q -f -o
-    ${pkgs.xlibs.xsetroot}/bin/xsetroot -cursor_name left_ptr
-    ${pkgs.xcompmgr}/bin/xcompmgr &
-    ${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper &
+    ${pkgs.rxvt_unicode}/bin/urxvtd -q -f -o			# urxvt terminal daemon
+    ${pkgs.xlibs.xsetroot}/bin/xsetroot -cursor_name left_ptr	# set left-pointer for xmonad
+    ${pkgs.xcompmgr}/bin/xcompmgr &				# composite manager
+    ${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper &		# custom wallpaper
   '';
 
   # Don't show the `Session: none + xmonad` message
