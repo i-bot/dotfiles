@@ -19,3 +19,8 @@
   'ctrl-alt-left': 'pane-move:left'
 '.platform-linux atom-text-editor, .platform-linux .pane-move .right atom-text-editor':
   'ctrl-alt-right': 'pane-move:right'
+
+'.platform-linux atom-text-editor, .platform-linux .window .next atom-text-editor':
+  'ctrl-alt-tab': 'window:focus-next-pane'
+'.platform-linux atom-text-editor, .platform-linux .window .previous atom-text-editor':
+  'ctrl-alt-shift-tab': 'window:focus-previous-pane'
