@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./machines/hardware-configuration.nix
+      ./neo.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -12,11 +13,6 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.splashImage = null;
-
-  # Select internationalisation properties.
-  i18n = {
-    consoleKeyMap = "de";
-  };
 
   environment.systemPackages = with pkgs; [
     # Programs for daily use.
@@ -60,8 +56,6 @@
   programs.bash.enableCompletion = true;
 
   services.xserver.enable = true;
-  services.xserver.layout = "de";
-  services.xserver.xkbVariant = "neo";
 
   services.xserver.windowManager.default = "xmonad";
   services.xserver.windowManager.xmonad.enable = true;
