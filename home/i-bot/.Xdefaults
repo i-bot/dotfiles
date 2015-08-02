@@ -35,7 +35,7 @@ URxvt*color15 : #EEEEEC
 
 URxvt.scrollBar: false
 URxvt.depth: 32
-URxvt*background: rgba:0000/0000/0000/5555
+URxvt*background: rgba:0000/0000/0000/9999
 
 ! Make numpad keys behave the same as the corresponding normal keys
 URxvt.keysym.KP_Add:		+
