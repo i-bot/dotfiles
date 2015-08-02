@@ -53,3 +53,6 @@
   "git-plus": {}
   "tree-view":
     hideIgnoredNames: true
+  latex:
+    openResultAfterBuild: false
+    openResultInBackground: false
