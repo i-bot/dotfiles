@@ -38,7 +38,7 @@ main = do
             writeTagInfo leftXmobar
             writeTagInfo rightXmobar
         } `additionalKeys`
-        [ ((myModMask, xK_a), spawnHere "atom ~/workspace")
+        [ ((myModMask, xK_a), spawnHere "export PATH=\"$PATH:~/.bin\"; atom_launcher workspace/")
         , ((myModMask, xK_t), spawnHere myTerminal)
         , ((myModMask, xK_p), spawnHere $ "dmenu_run " ++ dmenuArguments)
         , ((myModMask, xK_c), kill)
