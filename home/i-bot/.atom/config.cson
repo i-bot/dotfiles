@@ -20,7 +20,8 @@
       "*.toc"
       "*.fls"
       "*.out"
-      "*.synctex.gz"
+      "*.synctex.*"
+      "*.lof"
     ]
     autoHideMenuBar: true
   editor:
