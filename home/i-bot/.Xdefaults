@@ -3,7 +3,7 @@
 Xmessage.background:          #002b36
 Xmessage.foreground:          #839496
 
-URxvt.font:	xft:Tewi:size=7
+URxvt*font:	xft:Tewi:normal:size=7
 URxvt*iso14755: false
 
 urxvt*foreground: #839496
