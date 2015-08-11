@@ -27,18 +27,20 @@
   editor:
     invisibles: {}
     showIndentGuide: true
-    fontSize: 11
     showInvisibles: true
     softWrap: true
     scrollPastEnd: true
     softWrapAtPreferredLineLength: true
     tabLength: 4
+    fontSize: 11
   "one-dark-ui": {}
   "autocomplete-plus":
     autoActivationDelay: 50
     minimumWordLength: 1
   minimap:
     scrollAnimation: true
+    plugins:
+      "git-diff": true
   "atom-beautify":
     _analyticsUserId: "8fdd0da3-b87e-4ea9-b3f6-7f10a60c45ff"
   "go-plus":
