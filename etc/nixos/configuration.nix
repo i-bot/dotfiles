@@ -91,7 +91,7 @@
     createHome = true;
     home = "/home/i-bot";
     group = "i-bot";
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "networkManager"];
   };
 
   time.timeZone = "Europe/Berlin";
