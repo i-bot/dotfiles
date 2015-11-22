@@ -2,7 +2,7 @@
 { pkgs, ... }:
 let console-neo-map = pkgs.fetchsvn {
   url = "https://svn.neo-layout.org/linux/console/neo.map";
-  sha256 = "1v681p1q8nnvwv8wkqk6d1vyyqjxc365w2jxfpdk1szf5v23d3jr";
+  sha256 = "18r2213mh1a9xhhkrlfj9mrw0b8gziz58mc6g24bk4kdfw49nzzg";
   name = "console-neo.map";
 };
 in
