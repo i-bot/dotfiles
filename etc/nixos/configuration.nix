@@ -87,10 +87,11 @@
   services.xserver.displayManager.slim.theme = /etc/slim/nixos;
 
   services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.rxvt_unicode}/bin/urxvtd -q -f -o			# urxvt terminal daemon
+    ${pkgs.rxvt_unicode}/bin/urxvtd -q -f -o			# urxvt daemon
     ${pkgs.xlibs.xsetroot}/bin/xsetroot -cursor_name left_ptr	# set left-pointer for xmonad
     ${pkgs.xcompmgr}/bin/xcompmgr &				# composite manager
     ${pkgs.feh}/bin/feh --bg-fill ~/.wallpaper &		# custom wallpaper
+    ${pkgs.emacs}/bin/emacs --daemon &
   '';
 
   # Don't show the `Session: none + xmonad` message
@@ -100,6 +101,7 @@
 
   services.mysql.enable = true;
   services.mysql.package = pkgs.mysql;
+  services.xserver.startGnuPGAgent = true;
 
   services.redshift.enable = true;
   services.redshift.latitude = "48.267852";
