@@ -3,39 +3,41 @@
 Xmessage.background:          #002b36
 Xmessage.foreground:          #839496
 
-URxvt*font:	xft:Tewi:normal:size=7
-URxvt*iso14755: false
+! Molokai theme
+URxvt*background: #001E1E
+URxvt*foreground: #93a1a1
 
-urxvt*foreground: #839496
 
 ! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #2E3436
+*color0:#121112
+*color8:#6C6C6C
 ! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
+*color1:#D7005F
+*color9:#D74083
 ! green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #FFFF00
+*color2:#87FF00
+*color10:#93FF19
 ! yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
+*color3:#FF8700
+*color11:#FF9926
 ! blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
+*color4:#005F87
+*color12:#387BAB
 ! magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
+*color5:#AF5FFF
+*color13:#B973FF
 ! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
+*color6:#81C1C1
+*color14:#5FD7FF
 ! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
+*color7:#AFAF87
+*color15:#D0D0D0
+! underline when default
+*colorUL: #5FD7FF
 
-URxvt.scrollBar: false
-URxvt.depth: 32
-URxvt*background: rgba:0000/0000/0000/9999
+URxvt.scrollBar: 	false
+URxvt.depth: 		32
+!URxvt*background: 	rgba:0000/0000/0000/9999
 
 ! Make numpad keys behave the same as the corresponding normal keys
 URxvt.keysym.KP_Add:		+

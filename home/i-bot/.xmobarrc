@@ -1,6 +1,8 @@
 Config { font = "xft:Tewi:normal:size=7"
        , bgColor = "black"
        , fgColor = "grey"
+       , bgColor = "#282828"
+       , fgColor = "#93a1a1"
        , position = Top
        , commands = [ Run Cpu ["-H","90","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10

@@ -12,7 +12,7 @@ import qualified Data.Map.Strict as M
 writeTagInfo :: Handle -> X ()
 writeTagInfo handle = dynamicLogWithPP xmobarPP
     { ppOutput = hPutStrLn handle
-    , ppTitle = xmobarColor "yellow" ""
+    , ppTitle = xmobarColor "#fe5000" ""
     }
 
 myModMask = mod4Mask
@@ -30,8 +30,8 @@ main = do
     xmonad $ defaultConfig
         { modMask = myModMask
         , terminal = myTerminal
-        , normalBorderColor = "#383A3B"
-        , focusedBorderColor = "#383A3B"
+        , normalBorderColor = "#282828"
+        , focusedBorderColor = "#387BAB"
         , manageHook = manageSpawn <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
         , logHook = do
