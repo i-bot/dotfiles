@@ -1,16 +1,32 @@
 Config { font = "xft:Tewi:normal:size=7"
-       , bgColor = "black"
-       , fgColor = "grey"
        , bgColor = "#282828"
        , fgColor = "#93a1a1"
        , position = Top
-       , commands = [ Run Cpu ["-H","90","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Date "%F (%A) %H:%M" "date" 10
+       , iconRoot = "./.icons/sm4tik/"
+       , commands = [ Run Memory ["-L","10","-H","50","--normal","green","--high","red","-t","Mem: <usedratio>%"] 10
+                    , Run Cpu ["-L","10","-H","50","--normal","green","--high","red"] 10
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 1
+                    , Run CoreTemp ["-L","60","-H","80","--normal","green","--high","red"] 10
                     , Run StdinReader
+                    , Run DynNetwork
+                              [ "-t"
+                              , "<icon=net_down_02.xbm/> <rx> KB/s \
+                                \<icon=net_up_02.xbm/> <tx> KB/s"
+                              ] 10
+                    , Run Com ".bin/touchpad-control" ["query"] "touchpad" 10
+                    , Run Com ".bin/battery-query" [] "battery_custom" 10
+                    , Run Com ".bin/unread-mails" [] "unread_mails" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu%, %memory%, %swap% <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% \
+                    \}{ \
+                    \%unread_mails% \
+                    \%battery_custom% | \
+                    \%touchpad% | \
+                    \%dynnetwork% | \
+                    \<icon=cpu.xbm/> %cpu% | \
+                    \<icon=temp.xbm/> %coretemp% | \
+                    \<icon=mem.xbm/> %memory% | \
+                    \<icon=clock.xbm/> <fc=#0084ca> %date% </fc>"
        }

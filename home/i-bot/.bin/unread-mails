@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+while read alias
+do
+    count=$(ls ~/.mail/$alias/INBOX/new | wc -l)
+    echo -n "<icon=mail.xbm/> $alias: $count | "
+done < <(ls ~/.mutt/accs/)
