@@ -101,9 +101,11 @@
 
   services.xserver.startGnuPGAgent = true;
 
+  # Enable and Configure redshift
   services.redshift.enable = true;
   services.redshift.latitude = "48.267852";
   services.redshift.longitude = "10.987011";
+  services.redshift.temperature.night = 4000;
 
   users.extraGroups.i-bot = {};
 
