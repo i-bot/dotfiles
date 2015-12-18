@@ -19,6 +19,7 @@ fi
 
 export PATH="$PATH:~/.bin"
 
+alias git='unset SSH_ASKPASS; git'
 alias g='git'
 alias le='ls -al'
 alias mutt='sh ~/.bin/muttstarter.sh'
