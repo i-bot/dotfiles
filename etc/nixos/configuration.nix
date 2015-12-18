@@ -107,8 +107,17 @@
   services.redshift.longitude = "10.987011";
   services.redshift.temperature.night = 4000;
 
-  users.extraGroups.i-bot = {};
+  # Enable Tor
+  services.tor.enable = true;
+  services.tor.client.enable = true;
+  services.tor.controlPort = 9051;
 
+  # Proxy things through privoxy
+  services.privoxy.enable = true;
+  networking.proxy.default = "http://127.0.0.1:8118";
+
+  # Add extra User
+  users.extraGroups.i-bot = {};
   users.extraUsers.i-bot = {
     isNormalUser = true;
     createHome = true;
