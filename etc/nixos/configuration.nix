@@ -99,8 +99,6 @@
     session_y 200%
   '';
 
-  services.mysql.enable = true;
-  services.mysql.package = pkgs.mysql;
   services.xserver.startGnuPGAgent = true;
 
   services.redshift.enable = true;
