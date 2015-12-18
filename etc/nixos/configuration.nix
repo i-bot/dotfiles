@@ -20,48 +20,64 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # Programs for daily use.
+    # daily use
     wget
     htop
-    mysql
     python2
     python3
     openjdk
     firefox
-    weechat
+    thunderbird
     rxvt_unicode
+    tmux
+    emacs
+
+    # LaTeX
+    texLiveFull
+    zathura
+
+    # communication
+    weechat
+    pond
+    mutt-with-sidebar
+    isync
+    msmtp
+    gnupg
+    gpgme
+    pass
 	
-    # Tools required for file management.
+    # file management
     git
     stow
     
-    # Tools for improving visual experience.
+    # visual things
     feh
     xcompmgr
     redshift
-
-    # Management of gtk-themes
     lxappearance
+    libnotify
     
-    # Packages required for xmonad.
-    dmenu2
-    haskellPackages.xmobar
-    haskellPackages.xmonad
-    haskellPackages.xmonadContrib
-    haskellPackages.xmonadExtras
-    
-    # Packages needed for haskell programming
-    haskellPackages.ghc
-    haskellPackages.ghcMod
-    haskellPackages.cabal2nix
-    haskellPackages.hlint
-    haskellPackages.hoogle
+    # xmonad
+    dmenu
+    haskellngPackages.xmobar
+    haskellngPackages.xmonad
+    haskellngPackages.xmonad-contrib
+    haskellngPackages.xmonad-extras
+    alock
+    acpi
+
+    # haskell programming
+    haskellngPackages.ghc
+    haskellngPackages.ghc-mod
+    haskellngPackages.cabal2nix
+    haskellngPackages.hlint
+    haskellngPackages.hoogle
+    haskellngPackages.hdevtools
   ];
   
   programs.bash.enableCompletion = true;
 
   services.xserver.enable = true;
-
   services.xserver.windowManager.default = "xmonad";
   services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.xmonad.enableContribAndExtras = true;
