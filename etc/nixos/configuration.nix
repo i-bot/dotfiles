@@ -3,7 +3,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./machines/hardware-configuration.nix
+      ./hardware-configuration.nix
+      ./machines/current-machine.nix
       ./neo.nix
     ];
 
