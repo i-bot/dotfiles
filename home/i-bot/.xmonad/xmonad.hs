@@ -9,8 +9,7 @@ import XMonad.Actions.SpawnOn
 import System.IO
 import qualified Data.Map.Strict as M
 
-writeTagInfo :: Handle -> X ()
-writeTagInfo handle = dynamicLogWithPP xmobarPP
+customPP handle = xmobarPP
     { ppOutput = hPutStrLn handle
     , ppTitle = xmobarColor "#fe5000" ""
     }
@@ -18,15 +17,8 @@ writeTagInfo handle = dynamicLogWithPP xmobarPP
 myModMask = mod4Mask
 myTerminal = "urxvtc"
 
-
-dmenuArguments :: String
-dmenuArguments = unwords $ [ "-dim 0.5"
-                           , "-l 20"
-                           ]
-
 main = do
-    leftXmobar <- spawnPipe "xmobar -x 0"
-    rightXmobar <- spawnPipe "xmobar -x 1"
+    xmproc <- spawnPipe "xmobar"
     xmonad $ defaultConfig
         { modMask = myModMask
         , terminal = myTerminal
@@ -34,13 +26,15 @@ main = do
         , focusedBorderColor = "#387BAB"
         , manageHook = manageSpawn <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
-        , logHook = do
-            writeTagInfo leftXmobar
-            writeTagInfo rightXmobar
+        , logHook = dynamicLogWithPP . customPP $ xmproc
+        , workspaces = ["1:emacs", "2:web", "3:communication", "4", "5", "6", "7", "8", "9"]
         } `additionalKeys`
-        [ ((myModMask, xK_a), spawnHere "export PATH=\"$PATH:~/.bin\"; atom_launcher workspace/")
-        , ((myModMask, xK_t), spawnHere myTerminal)
-        , ((myModMask, xK_p), spawnHere $ "dmenu_run " ++ dmenuArguments)
+        [ ((myModMask, xK_t), spawn myTerminal)
+        , ((myModMask, xK_d), spawn "dmenu_run")
         , ((myModMask, xK_c), kill)
-        , ((myModMask, xK_f), spawnHere "firefox")
+        , ((myModMask, xK_f), spawn "firefox")
+        , ((myModMask, xK_e), spawn "urxvtc -e emacsclient -t")
+        , ((myModMask, xK_p), spawn "~/.bin/touchpad-control toggle")
+        , ((myModMask, xK_m), spawn "urxvtc -e emacsclient -t")
+        , ((myModMask, xK_o), spawn "client")
         ]
