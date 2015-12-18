@@ -127,4 +127,6 @@
   };
 
   time.timeZone = "Europe/Berlin";
+
+  system.stateVersion = "15.09";
 }
